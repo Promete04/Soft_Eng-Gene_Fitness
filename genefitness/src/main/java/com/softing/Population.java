@@ -1,9 +1,12 @@
+package com.softing;
 
 /**
  * Population.java
  * Holds and evolves a population of chromosomes.
  */
 import java.util.*;
+
+import com.softing.Chromosome;
 
 public class Population {
     private List<Chromosome> individuals;

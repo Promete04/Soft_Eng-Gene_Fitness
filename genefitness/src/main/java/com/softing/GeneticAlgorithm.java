@@ -1,4 +1,4 @@
-
+package com.softing;
 /**
  * GeneticAlgorithm.java
  * The main driver that sets up and runs the GA.

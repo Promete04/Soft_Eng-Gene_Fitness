@@ -1,9 +1,12 @@
+package com.softing;
 
 /**
  * Chromosome.java
  * Represents a candidate solution (individual in the population).
  */
 import java.util.*;
+
+import com.softing.Gene;
 
 public class Chromosome {
     private List<Gene> genes;
