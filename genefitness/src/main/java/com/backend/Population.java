@@ -1,4 +1,4 @@
-package com.softing;
+package com.backend;
 
 /**
  * Population.java
@@ -6,7 +6,7 @@ package com.softing;
  */
 import java.util.*;
 
-import com.softing.Chromosome;
+import com.backend.Chromosome;
 
 public class Population {
     private List<Chromosome> individuals;

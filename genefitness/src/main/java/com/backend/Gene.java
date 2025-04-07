@@ -1,4 +1,4 @@
-package com.softing;
+package com.backend;
 /**
  * Gene.java
  * Represents a single gene in a chromosome (basic unit of data).

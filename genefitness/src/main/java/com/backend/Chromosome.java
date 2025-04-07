@@ -1,4 +1,4 @@
-package com.softing;
+package com.backend;
 
 /**
  * Chromosome.java
@@ -6,7 +6,7 @@ package com.softing;
  */
 import java.util.*;
 
-import com.softing.Gene;
+import com.backend.Gene;
 
 public class Chromosome {
     private List<Gene> genes;
