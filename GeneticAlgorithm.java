@@ -8,7 +8,11 @@ public class GeneticAlgorithm {
         int populationSize = 20;
         int chromosomeLength = 10;
         double mutationRate = 0.05;
-        int generations = 10;
+        int generations = 50;
+
+        if (mutationRate < 0 || mutationRate > 1) {
+            throw new IllegalArgumentException("Mutation rate must be between 0 and 1.");
+        }
 
         Population population = new Population(populationSize, chromosomeLength);
 

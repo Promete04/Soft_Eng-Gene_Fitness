@@ -5,7 +5,6 @@
  */
 import java.util.*;
 
-
 public class Chromosome {
     private List<Gene> genes;
     private double fitness;
@@ -19,6 +18,9 @@ public class Chromosome {
     }
 
     public Chromosome(List<Gene> genes) {
+        if (genes == null || genes.isEmpty()) {
+            throw new IllegalArgumentException("Gene list cannot be null or empty");
+        }
         this.genes = new ArrayList<>(genes);
         evaluateFitness();
     }
@@ -32,12 +34,16 @@ public class Chromosome {
     }
 
     public void evaluateFitness() {
-        // Example fitness: sum of gene values
+        if (genes == null || genes.contains(null)) {
+            throw new IllegalStateException("Gene list is null or contains null elements.");
+        }
         fitness = genes.stream().mapToDouble(Gene::getValue).sum();
     }
 
     public Chromosome crossover(Chromosome partner) {
-        // Single-point crossover
+        if (partner == null || partner.getGenes().size() != genes.size()) {
+            throw new IllegalArgumentException("Partner chromosome is invalid or of different length.");
+        }
         int point = (int)(Math.random() * genes.size());
         List<Gene> childGenes = new ArrayList<>();
 
@@ -52,6 +58,9 @@ public class Chromosome {
     }
 
     public void mutate(double mutationRate) {
+        if (mutationRate < 0 || mutationRate > 1) {
+            throw new IllegalArgumentException("Mutation rate must be between 0 and 1.");
+        }
         for (Gene gene : genes) {
             if (Math.random() < mutationRate) {
                 gene.mutate();
